@@ -84,6 +84,8 @@
     <ClInclude Include="GpuSpec.h" />
     <ClInclude Include="GpuSpecMgr.h" />
     <ClInclude Include="RegistryUtil.h" />
+    <ClInclude Include="Status.h" />
+    <ClInclude Include="StatusMgr.h" />
     <ClInclude Include="symbols.h" />
     <ClInclude Include="types.h" />
   </ItemGroup>
@@ -101,6 +103,8 @@
     <ClCompile Include="GpuSpec.cpp" />
     <ClCompile Include="GpuSpecMgr.cpp" />
     <ClCompile Include="RegistryUtil.cpp" />
+    <ClCompile Include="Status.cpp" />
+    <ClCompile Include="StatusMgr.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

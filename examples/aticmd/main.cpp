@@ -960,6 +960,8 @@ void ShowHelp(void)
 
 #include "../../src/DataModel/GpuSpec.h"
 #include "../../src/DataModel/GpuSpecMgr.h"
+#include "../../src/DataModel/Status.h"
+#include "../../src/DataModel/StatusMgr.h"
 void ViewGpus()
 {
     size_t count = Dm::GpuSpecMgr::get()->getCount();
@@ -967,5 +969,8 @@ void ViewGpus()
     {
         Dm::GpuSpec gpu = Dm::GpuSpecMgr::get()->getGpuSpec(i);
         gpu.print();
+        
+        Dm::Status status = Dm::StatusMgr::get()->getStatus(i);
+        status.print();
     }
 }
