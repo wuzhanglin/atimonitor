@@ -8,36 +8,39 @@ using namespace Dm;
 
 GpuSpecData::GpuSpecData()
     : index(0)
-    , name("AMD Radeon HD 7900 Series")
-    , gpu("Tahiti")
-    , revision("1.0")
-    , releaseDate("Dec 22, 2011")
-    , biosVersion("015.012.0000.004.000346")
-    , deviceID("1002-6798")
-    , subvendor("XFX")
-    , busInterface("PCI-E 3.0 x16 @ 16 1.1")
-    , memorySize(3072)
-    , memoryType("GDDR5")
-    , driverVersion("ATIUMDAG 89.1223.23")
+    , name("")
+    , gpu("Tahiti") // hard coded
+    , revision("1") // hard coded
+    , releaseDate("22-Dec-11") // hard coded
+    , biosVersion("")
+    , deviceID("")
+    , subvendor("XFX") // hard coded
+    , busInterface("")
+    , memorySize(0)
+    , memoryType("")
+    , driverVersion("")
 
-    , rops(32)
-    , busWidth(384)
-    , bandwidth(302)
-    , gpuClock(1125)
-    , gpuDefaultClock(1125)
-    , memoryClock(1575)
-    , memoryDefaultClock(1575)
-    , shaderClock(1000)
-    , shaderDefaultClock(1000)
-    , atiCrossFireEnabled(true)
+    , rops(0)
+    , busWidth(0)
+    , bandwidth(0)
+    , gpuClock(0)
+    , gpuDefaultClock(0)
+    , memoryClock(0)
+    , memoryDefaultClock(0)
+    , shaderClock(0)
+    , shaderDefaultClock(0)
+    , atiCrossFireEnabled(false)
 {
 }
 
 void GpuSpec::print() const
 {
-#define PRINT_DATA(key) std::cout << std::endl << #key << ": " << this->data.key 
+#define PRINT_DATA(key) std::cout << std::endl << #key << ": " << this->data.key
+
     std::cout << std::endl << "______________" << "GPU SPEC " << this->data.index << "_________________";
+
     PRINT_DATA(index);
+
     PRINT_DATA(name);
     PRINT_DATA(gpu);
     PRINT_DATA(revision);
@@ -82,18 +85,45 @@ static string ExtractDeviceId(const string udid)
 
 void GpuSpec::update(const AdapterInfo* pAdpt/* = NULL*/)
 {
-#ifndef FAKE_GRAPHICS_CARD
+#ifdef FAKE_GRAPHICS_CARD
+
+    this->data.index = 0;
+    this->data.name = "AMD Radeon HD 7900 Series";
+    //this->data.gpu = "Tahiti"; // hard coded
+    //this->data.revision = "1"; // hard coded
+    //this->data.releaseDate = "22-Dec-11"; // hard coded
+    this->data.biosVersion = "015.012.0000.004.000346";
+    this->data.deviceID = "1002-6798";
+    //this->data.subvendor = "XFX"; // hard coded
+    this->data.busInterface = "PCI-E 3.0 x16 @ 16 1.1";
+    this->data.memorySize = 3072;
+    this->data.memoryType = "GDDR5";
+    this->data.driverVersion = "ATIUMDAG 89.1223.23";
+
+    this->data.rops = 32;
+    this->data.busWidth = 384;
+    this->data.bandwidth = 302;
+    this->data.gpuClock = 1125;
+    this->data.gpuDefaultClock = 1125;
+    this->data.memoryClock = 1575;
+    this->data.memoryDefaultClock = 1575;
+    this->data.shaderClock = 1000;
+    this->data.shaderDefaultClock = 1000;
+    this->data.atiCrossFireEnabled = true;
+
+#else
+
     if (pAdpt == NULL)
         return;
 
     this->data.index = pAdpt->iAdapterIndex;
     this->data.name = pAdpt->strAdapterName;
-    this->data.gpu = "";
-    this->data.revision = "";
-    this->data.releaseDate = "";
+    //this->data.gpu = "Tahiti"; // hard coded
+    //this->data.revision = "1"; // hard coded
+    //this->data.releaseDate = "22-Dec-11"; // hard coded
     this->data.biosVersion = "";
     this->data.deviceID = ExtractDeviceId(string(pAdpt->strUDID));
-    this->data.subvendor = "XFX";
+    //this->data.subvendor = "XFX"; // hard coded
     this->data.busInterface = "";
     this->data.memorySize = 0;
     this->data.memoryType = "";
@@ -123,5 +153,6 @@ void GpuSpec::update(const AdapterInfo* pAdpt/* = NULL*/)
         GetStringRegKey(key, "DriverVersion", version, empty);
         this->data.driverVersion = provider + " " + version;
     }
+
 #endif
 }
