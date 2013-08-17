@@ -962,6 +962,8 @@ void ShowHelp(void)
 #include "../../src/DataModel/GpuSpecMgr.h"
 #include "../../src/DataModel/Status.h"
 #include "../../src/DataModel/StatusMgr.h"
+#include "../../src/DataModel/PerfOverTime.h"
+#include "../../src/DataModel/PerfOverTimeMgr.h"
 void ViewGpus()
 {
     size_t count = Dm::GpuSpecMgr::get()->getCount();
@@ -972,5 +974,8 @@ void ViewGpus()
         
         Dm::Status status = Dm::StatusMgr::get()->getStatus(i);
         status.print();
+
+        Dm::PerfOverTime perf = Dm::PerfOverTimeMgr::get()->getPerfOverTime(i);
+        perf.print();
     }
 }

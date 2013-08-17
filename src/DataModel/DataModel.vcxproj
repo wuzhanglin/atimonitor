@@ -83,6 +83,8 @@
     <ClInclude Include="globals.h" />
     <ClInclude Include="GpuSpec.h" />
     <ClInclude Include="GpuSpecMgr.h" />
+    <ClInclude Include="PerfOverTime.h" />
+    <ClInclude Include="PerfOverTimeMgr.h" />
     <ClInclude Include="RegistryUtil.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="StatusMgr.h" />
@@ -102,6 +104,8 @@
     </ClCompile>
     <ClCompile Include="GpuSpec.cpp" />
     <ClCompile Include="GpuSpecMgr.cpp" />
+    <ClCompile Include="PerfOverTime.cpp" />
+    <ClCompile Include="PerfOverTimeMgr.cpp" />
     <ClCompile Include="RegistryUtil.cpp" />
     <ClCompile Include="Status.cpp" />
     <ClCompile Include="StatusMgr.cpp" />
