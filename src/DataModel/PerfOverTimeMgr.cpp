@@ -46,6 +46,7 @@ size_t PerfOverTimeMgr::update()
     ADLOD6CurrentStatus* pCurrentStatus = (ADLOD6CurrentStatus*) malloc(sizeof(ADLOD6CurrentStatus));
     ADLFanSpeedValue* pFan = (ADLFanSpeedValue*) malloc(sizeof(ADLFanSpeedValue));
     ADLOD6FanSpeedInfo* pFanOD6 = (ADLOD6FanSpeedInfo*) malloc(sizeof(ADLOD6FanSpeedInfo));
+    ADLFanSpeedInfo* pFanInfo = (ADLFanSpeedInfo*) malloc(sizeof(ADLFanSpeedInfo));
     for (size_t i = 0; i < count; i++)
     {
         PerfOverTime perf = PerfOverTime();
@@ -92,6 +93,13 @@ size_t PerfOverTimeMgr::update()
             perf.data.fanSpeedNow = pFanOD6->iFanSpeedPercent;
         }
 
+        memset(pFanInfo, 0, sizeof(ADLFanSpeedInfo));
+        if (SAFE_CALL(ADL::get()->ADL_Overdrive5_FanSpeedInfo_Get)(i, 0, pFanInfo) == ADL_OK)
+        {
+            perf.data.fanSpeedMax = pFanInfo->iMaxPercent;
+            perf.data.fanSpeedMin = pFanInfo->iMinPercent;
+        }
+
         this->perfs.push_back(perf);
     }
 
@@ -101,6 +109,7 @@ size_t PerfOverTimeMgr::update()
     free(pCurrentStatus);
     free(pFan);
     free(pFanOD6);
+    free(pFanInfo);
     return count;
 #endif // FAKE_GRAPHICS_CARD
 }
