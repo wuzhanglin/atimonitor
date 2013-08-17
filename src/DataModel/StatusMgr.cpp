@@ -42,6 +42,10 @@ size_t StatusMgr::update()
 
     ADLAdapterODClockInfo* pClock = (ADLAdapterODClockInfo*) malloc(sizeof(ADLAdapterODClockInfo));
     ADLPMActivity* pActivity = (ADLPMActivity*) malloc(sizeof(ADLPMActivity));
+    ADLTemperature* pTemperature = (ADLTemperature*) malloc(sizeof(ADLTemperature));
+    ADLOD6CurrentStatus* pCurrentStatus = (ADLOD6CurrentStatus*) malloc(sizeof(ADLOD6CurrentStatus));
+    ADLFanSpeedValue* pFan = (ADLFanSpeedValue*) malloc(sizeof(ADLFanSpeedValue));
+    ADLOD6FanSpeedInfo* pFanOD6 = (ADLOD6FanSpeedInfo*) malloc(sizeof(ADLOD6FanSpeedInfo));
     for (size_t i = 0; i < count; i++)
     {
         Status status = Status();
@@ -59,6 +63,38 @@ size_t StatusMgr::update()
         {
             status.data.memoryClock = pActivity->iMemoryClock;
             status.data.gpuClock = pActivity->iEngineClock;
+            status.data.gpuUsage = pActivity->iActivityPercent;
+            status.data.gpuVolt = pActivity->iVddc;
+        }
+
+        int t = 0;
+        memset(pTemperature, 0, sizeof(ADLTemperature));
+        if (SAFE_CALL(ADL::get()->ADL_Overdrive5_Temperature_Get)(i, 0, pTemperature) == ADL_OK)
+        {
+            status.data.gpuTemperature = pTemperature->iTemperature;
+        }
+        else if (SAFE_CALL(ADL::get()->ADL_Overdrive6_Temperature_Get)(i, &t))
+        {
+            status.data.gpuTemperature = t;
+        }
+
+        memset(pCurrentStatus, 0, sizeof(ADLOD6CurrentStatus));
+        if (SAFE_CALL(ADL::get()->ADL_Overdrive6_CurrentStatus_Get)(i, pCurrentStatus) == ADL_OK)
+        {
+            status.data.gpuUsage = pCurrentStatus->iActivityPercent;
+        }
+
+        memset(pFan, 0, sizeof(ADLFanSpeedValue));
+        memset(pFanOD6, 0, sizeof(ADLOD6FanSpeedInfo));
+        if (SAFE_CALL(ADL::get()->ADL_Overdrive5_FanSpeed_Get)(i, 0, pFan) == ADL_OK)
+        {
+            status.data.fanDuty = pFan->iFanSpeed;
+            status.data.fanSpeed = pFan->iFanSpeed;
+        }
+        else if (SAFE_CALL(ADL::get()->ADL_Overdrive6_FanSpeed_Get)(i, pFanOD6) == ADL_OK)
+        {
+            status.data.fanDuty = pFanOD6->iFanSpeedPercent;
+            status.data.fanSpeed = pFanOD6->iFanSpeedRPM;
         }
 
         this->statuses.push_back(status);
@@ -66,6 +102,10 @@ size_t StatusMgr::update()
 
     free(pClock);
     free(pActivity);
+    free(pTemperature);
+    free(pCurrentStatus);
+    free(pFan);
+    free(pFanOD6);
     return count;
 #endif // FAKE_GRAPHICS_CARD
 }

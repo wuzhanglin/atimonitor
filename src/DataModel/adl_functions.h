@@ -197,6 +197,12 @@ typedef int ( *ADL_OVERDRIVE5_FANSPEEDTODEFAULT_SET ) (int iAdapterIndex, int iT
 typedef int ( *ADL_OVERDRIVE5_ODPARAMETERS_GET ) (int iAdapterIndex, ADLODParameters *lpOdParameters);
 typedef int ( *ADL_OVERDRIVE5_ODPERFORMANCELEVELS_GET ) (int iAdapterIndex, int iDefault, ADLODPerformanceLevels *lpOdPerformanceLevels);
 typedef int ( *ADL_OVERDRIVE5_ODPERFORMANCELEVELS_SET ) (int iAdapterIndex, ADLODPerformanceLevels *lpOdPerformanceLevels);
+// ------------------------------------------------------------------------------------------------------------
+
+// ADL Overdrive 6
+typedef int ( *ADL_OVERDRIVE6_CURRENTSTATUS_GET ) (int iAdapterIndex, ADLOD6CurrentStatus *lpCurrentStatus);
+typedef int ( *ADL_OVERDRIVE6_TEMPERATURE_GET ) (int iAdapterIndex, int *lpTemperature);
+typedef int ( *ADL_OVERDRIVE6_FANSPEED_GET ) (int iAdapterIndex, ADLOD6FanSpeedInfo *lpFanSpeedInfo);
 
 // ------------------------------------------------------------------------------------------------------------
 
