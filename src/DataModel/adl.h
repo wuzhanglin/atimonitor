@@ -194,6 +194,7 @@ public:
 	ADL_OVERDRIVE5_ODPERFORMANCELEVELS_GET		ADL_Overdrive5_ODPerformanceLevels_Get;
 	ADL_OVERDRIVE5_ODPERFORMANCELEVELS_SET		ADL_Overdrive5_ODPerformanceLevels_Set;
 
+    ADL_OVERDRIVE6_CAPABILITIES_GET         ADL_Overdrive6_Capabilities_Get;
     ADL_OVERDRIVE6_CURRENTSTATUS_GET        ADL_Overdrive6_CurrentStatus_Get;
     ADL_OVERDRIVE6_TEMPERATURE_GET			ADL_Overdrive6_Temperature_Get;
     ADL_OVERDRIVE6_FANSPEED_GET			    ADL_Overdrive6_FanSpeed_Get;

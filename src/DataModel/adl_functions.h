@@ -200,6 +200,7 @@ typedef int ( *ADL_OVERDRIVE5_ODPERFORMANCELEVELS_SET ) (int iAdapterIndex, ADLO
 // ------------------------------------------------------------------------------------------------------------
 
 // ADL Overdrive 6
+typedef int ( *ADL_OVERDRIVE6_CAPABILITIES_GET ) (int iAdapterIndex, ADLOD6Capabilities *lpODCapabilities);
 typedef int ( *ADL_OVERDRIVE6_CURRENTSTATUS_GET ) (int iAdapterIndex, ADLOD6CurrentStatus *lpCurrentStatus);
 typedef int ( *ADL_OVERDRIVE6_TEMPERATURE_GET ) (int iAdapterIndex, int *lpTemperature);
 typedef int ( *ADL_OVERDRIVE6_FANSPEED_GET ) (int iAdapterIndex, ADLOD6FanSpeedInfo *lpFanSpeedInfo);
