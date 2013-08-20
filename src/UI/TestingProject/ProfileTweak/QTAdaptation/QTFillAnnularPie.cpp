@@ -42,6 +42,7 @@ QTFillAnnularPie::resizeEvent(QResizeEvent* event)
 	QWidget::resizeEvent(event);
 
 	QRect editRect(Offset_X, 0, rect().width() - 2 * Offset_X, rect().height());
+
 	//m_pLineEdit->setGeometry(editRect);
 
 	int nWidth = event->size().width();
