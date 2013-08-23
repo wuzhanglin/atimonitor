@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{b3bb01df-41a0-4461-af4e-ade0f37c1502}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{0d86c06c-8286-4fb3-90ec-3ba38ac6bed0}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{390acc0f-6f96-401f-b810-dd8da164b69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Base">
+      <UniqueIdentifier>{de0ef993-77a3-4511-8958-22617c5555fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource">
+      <UniqueIdentifier>{86719bd5-0050-448a-a869-6e73505a31c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Navigation">
+      <UniqueIdentifier>{cb0c9879-dff5-496f-9150-a1c1ffe602f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\PerformanceOverTime">
+      <UniqueIdentifier>{662cd75f-fca5-437d-b958-361f76a8ced2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\CurrentStatus">
+      <UniqueIdentifier>{1c391e57-176a-4483-aeae-a86047a8cff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\ProfileSettings">
+      <UniqueIdentifier>{b54e042b-64e2-440e-b5ab-6d2961fe305d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\GPUSpecificatioins">
+      <UniqueIdentifier>{a03f1a36-1f66-4147-81f5-c91fb7b05047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\OpacityBrightnessSettings">
+      <UniqueIdentifier>{253d8abd-4f36-4a1c-9682-1a24cb48b49f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource\Navigation">
+      <UniqueIdentifier>{0f52de4f-6ef6-450f-a89f-8b8210c94a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource\OpacityBrightnessSettings">
+      <UniqueIdentifier>{a0f03557-3d52-4fd8-b4af-02bed0287b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource\CurrentStatus">
+      <UniqueIdentifier>{04343809-fda0-40f2-bdfe-039b7e35863f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource\GPUSpecifications">
+      <UniqueIdentifier>{2ee78509-32ac-4d63-a367-5db0e863435b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource\ProfileSettings">
+      <UniqueIdentifier>{eaee606c-aba3-4887-a3c6-a61ecc9ccdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Resource\PerformanceOverTime">
+      <UniqueIdentifier>{b21c4363-7e3d-4a70-8f0a-ac1c5869e623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Utility">
+      <UniqueIdentifier>{9171d137-8209-4013-9a0d-13ad899e1603}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atimonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_atimonitor.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_atimonitor.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_atimonitor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Base\QTBackgroundWidget.cpp">
+      <Filter>UI\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\UIResource.cpp">
+      <Filter>UI\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\CurrentStatus\CurrentStatusResource.cpp">
+      <Filter>UI\Resource\CurrentStatus</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\GPUSpecifications\GPUSpecificationsResource.cpp">
+      <Filter>UI\Resource\GPUSpecifications</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\Navigation\NavigationResource.cpp">
+      <Filter>UI\Resource\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\OpacityBrightnessSettings\OpacityBrightnessSettingsResource.cpp">
+      <Filter>UI\Resource\OpacityBrightnessSettings</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\PerformanceOverTime\PerformanceOverTimeResource.cpp">
+      <Filter>UI\Resource\PerformanceOverTime</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Resource\ProfileSettings\ProfileSettingsResource.cpp">
+      <Filter>UI\Resource\ProfileSettings</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="atimonitor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="atimonitor.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="atimonitor.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_atimonitor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Base\QTBackgroundWidget.h">
+      <Filter>UI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\UIResource.h">
+      <Filter>UI\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\CurrentStatus\CurrentStatusResource.h">
+      <Filter>UI\Resource\CurrentStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\GPUSpecifications\GPUSpecificationsResource.h">
+      <Filter>UI\Resource\GPUSpecifications</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\Navigation\NavigationResource.h">
+      <Filter>UI\Resource\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\OpacityBrightnessSettings\OpacityBrightnessSettingsResource.h">
+      <Filter>UI\Resource\OpacityBrightnessSettings</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\PerformanceOverTime\PerformanceOverTimeUIResource.h">
+      <Filter>UI\Resource\PerformanceOverTime</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Resource\ProfileSettings\ProfileSettingsResource.h">
+      <Filter>UI\Resource\ProfileSettings</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
